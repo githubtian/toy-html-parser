@@ -163,6 +163,11 @@ function HTMLLexicalParser (syntaxer) {
       token[attribute.name] = attribute.value
       return beforeAttributeName
     }
+    if (c === '>') {
+        token[attribute.name] = attribute.value
+        emitToken(token)
+        return data;
+    }
     attribute.value += c
     return attributeValueUnquoted
   }
